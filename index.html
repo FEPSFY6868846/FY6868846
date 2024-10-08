@@ -105,15 +105,15 @@
       document.getElementById("date&time").innerHTML = d;
     </script>
 
-    <button id="colourButton">Click me!</button>
+    <button id="colorButton">Click me!</button>
     <script>
-      var button = document.getElementById("colourButton");
-      function changeColour(){
-        var randomColour = "#" + Math.floor(Math.Random()*16777215).toString(16);
-        button.style.backgroundColor = randomColour;
+      var button = document.getElementById("colorButton");
+      function changeColor(){
+        var randomColor = "#" + Math.floor(Math.Random()*16777215).toString(16);
+        button.style.backgroundColor = randomColor;
       }
 
-      button.addEventListner("cick", changeColour);
+      button.addEventListener("cick", changeColor);
     </script>
     
   </body>
