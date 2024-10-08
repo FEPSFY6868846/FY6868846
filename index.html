@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link  rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     
@@ -12,21 +10,17 @@
         border-collapse: collapse;
         width: 30%;
       }
-
       td, th {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
       }
-
       tr:nth-child(1) {
         background-color: #dddddd;
       }
-
       p.ex1 {
         margin-left: 250px;
       }
-
       .mySlides {display:none;}
     </style>
     
@@ -80,10 +74,6 @@
       You can follow the same steps to insert the ‘Introduction’ paragraph and link it with correct ‘id’. 
         You can use this sample introduction for your content. 
         Don’t forget to insert the closing tag. You can describe mathematical expressions, equations, and symbols in a structured manner, which can  then  be  rendered  by  web  browsers,  assistive technologies,and  other  software  applications.
-        Below  is  an  example  of  how  you  can  use  MathML  in  an  HTML  document  to  display  a  simple mathematical  expression.Presentation  of  MathML primarily  concentrates  on  the  visualisation  of mathematical  equations,  comprising  approximately  30  elements,  all  of  which  commence  with  the letter ‘m’. 
-        Some of the elements are listed below. You can follow the same steps to insert the ‘Introduction’ paragraph and link it with correct ‘id’. 
-        You can use this sample introduction for your content. 
-        Don’t forget to insert the closing tag. You can describe mathematical expressions, equations, and symbols in a structured manner, which can  then  be  rendered  by  web  browsers,  assistive technologies,and  other  software  applications.
         Below  is  an  example  of  how  you  can  use  MathML  in  an  HTML  document  to  display  a  simple mathematical  expression.
     </p>
 
@@ -109,13 +99,13 @@
     </p>
 
     <p id="date_time"></p>
-    
 
-  <script>
+    <!-- Move script here to ensure DOM is loaded before the script runs -->
+    <script>
       // JavaScript to display the date and time
-    const d = new Date();
-    document.getElementById("date_time").innerHTML = d;
-  </script>
+      const d = new Date();
+      document.getElementById("date_time").innerHTML = d;
+    </script>
     
   </body>
 </html>
