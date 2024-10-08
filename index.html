@@ -98,23 +98,26 @@
       <a href="https://en.wikipedia.org/wiki/Quadratic_equation">More info on the Quadratic Fromula</a>
     </p>
 
-    <p id="date&time"></p>
+    <p id="date_time"></p> <!-- Changed the id -->
 
     <script>
-      const d = new Date();
-      document.getElementById("date&time").innerHTML = d;
+      window.onload = function() {
+        // Display date and time
+        const d = new Date();
+        document.getElementById("date_time").innerHTML = d;
+
+        // Color change on button click
+        var button = document.getElementById("colorButton");
+        function changeColor(){
+          var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+          button.style.backgroundColor = randomColor;
+        }
+
+        button.addEventListener("click", changeColor);
+      };
     </script>
 
     <button id="colorButton">Click me!</button>
-    <script>
-      var button = document.getElementById("colorButton");
-      function changeColor(){
-        var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-        button.style.backgroundColor = randomColor;
-      }
 
-      button.addEventListener("click", changeColor);
-    </script>
-    
   </body>
 </html>
