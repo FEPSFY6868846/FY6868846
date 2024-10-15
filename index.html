@@ -102,15 +102,9 @@
     <button id="colorButton">Click me!</button>
 
 
-      <h1>Enter Some Text</h1>
-    
-    <!-- Input field for user text -->
+    <h3>Enter Some Text</h3>
     <input type="text" id="userInput" placeholder="Type something">
-    
-    <!-- Button to submit the text -->
     <button id="submitButton">Enter</button>
-    
-    <!-- Div to display the output text -->
     <div class="output" id="outputText"></div>
 
       <script>
@@ -126,25 +120,20 @@
           }
           button.addEventListener("click", changeColor);
 
-          // Get references to the input field, button, and output area
-        const inputField = document.getElementById('userInput');
-        const outputDiv = document.getElementById('outputText');
-        const submitButton = document.getElementById('submitButton');
+          // Text input and output
+          const inputField = document.getElementById('userInput');
+          const outputDiv = document.getElementById('outputText');
+          const submitButton = document.getElementById('submitButton');
 
-        // Listen for a click event on the button
-        submitButton.addEventListener('click', function() {
-            // Get the text from the input field
-            const userText = inputField.value;
+          submitButton.addEventListener('click', function() {
+              const userText = inputField.value;
 
-            // Check if the input field is not empty
-            if (userText.trim() !== '') {
-                // Display the text in the output div
-                outputDiv.textContent = userText;
+              if (userText.trim() !== '') {
+                  outputDiv.textContent = userText;
 
-                // Clear the input field
-                inputField.value = '';
-            }
-        });
+                  inputField.value = '';
+              }
+          });
       </script>
 
   </body>
