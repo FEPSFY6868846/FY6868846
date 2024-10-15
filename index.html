@@ -102,10 +102,16 @@
     <button id="colorButton">Click me!</button>
 
 
-      <p id="text_input_output"></p>
-      <textarea id="text_input">Please enter your text</textarea>
-      <button id="enter_button">Enter</button>
-      <h3 id="text_output"></h3>
+      <h1>Enter Some Text</h1>
+    
+    <!-- Input field for user text -->
+    <input type="text" id="userInput" placeholder="Type something">
+    
+    <!-- Button to submit the text -->
+    <button id="submitButton">Enter</button>
+    
+    <!-- Div to display the output text -->
+    <div class="output" id="outputText"></div>
 
       <script>
           // Display date and time
@@ -120,14 +126,25 @@
           }
           button.addEventListener("click", changeColor);
 
-          // Text input and output
-          var enter_button = document.getElementById("enter_button");
-          var input_text = document.getElementById("text_input");
-          function updateOutput() {
-              var output_field = document.getElementById("text_output");
-              output_field = input_text;
-          }
-          enter_button.addEventListener("click", updateOutput);
+          // Get references to the input field, button, and output area
+        const inputField = document.getElementById('userInput');
+        const outputDiv = document.getElementById('outputText');
+        const submitButton = document.getElementById('submitButton');
+
+        // Listen for a click event on the button
+        submitButton.addEventListener('click', function() {
+            // Get the text from the input field
+            const userText = inputField.value;
+
+            // Check if the input field is not empty
+            if (userText.trim() !== '') {
+                // Display the text in the output div
+                outputDiv.textContent = userText;
+
+                // Clear the input field
+                inputField.value = '';
+            }
+        });
       </script>
 
   </body>
