@@ -102,20 +102,33 @@
     <button id="colorButton">Click me!</button>
 
 
-    <script>
-        // Display date and time
-        const d = new Date();
-        document.getElementById("date_time").innerHTML = d;
+      <p id="text_input_output"></p>
+      <textarea id="text_input">Please enter your text</textarea>
+      <button id="enter_button">Enter</button>
+      <h3 id="text_output"></h3>
 
-        // Color change on button click
-        var button = document.getElementById("colorButton");
-        function changeColor(){
-          var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-          button.style.backgroundColor = randomColor;
-        }
+      <script>
+          // Display date and time
+          const d = new Date();
+          document.getElementById("date_time").innerHTML = d;
 
-        button.addEventListener("click", changeColor);
-    </script>
+          // Color change on button click
+          var button = document.getElementById("colorButton");
+          function changeColor() {
+              var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+              button.style.backgroundColor = randomColor;
+          }
+          button.addEventListener("click", changeColor);
+
+          // Text input and output
+          var enter_button = document.getElementById("enter_button");
+          var input_text = document.getElementById("text_input");
+          function updateOutput() {
+              var output_field = document.getElementById("text_output");
+              output_field = input_text;
+          }
+          enter_button.addEventListener("click", updateOutput);
+      </script>
 
   </body>
 </html>
