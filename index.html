@@ -130,11 +130,12 @@
 
               if (userText.trim() !== '') {
                   outputDiv.textContent = userText;
-
+                  outputDiv.style.color = '';
                   inputField.value = '';
               }
               else {
                 outputDiv.textContent = "Please type something.";
+                outputDiv.style.color = 'red';
               }
           });
       </script>
