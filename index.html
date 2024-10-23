@@ -40,7 +40,7 @@
     <h2>Student URN: 6868846</h2>
 
     <hr>
-    <h2 style="font-family:calibri;"><b>Conference paper: Bridge Deck Repairs</b></h2>
+    <h2 style="font-family:calibri;"><b>The ethics of Artificial Intelligence in medical diagnosis</b></h2>
     <hr>
 
     <table class="ex1">
@@ -62,9 +62,9 @@
 
     <h3 id="abstract">Abstract</h3>
     <p class="ex1">
-        You can follow the same steps to insert the ‘Introduction’ paragraph and link it with correct ‘id’.
-        You can use this sample introduction for your content.
-        Don’t forget to insert the closing tag.
+        - An overview of the paper 
+        - Should include all the key messages
+        - Stick to the word limit
     </p>
 
     <hr>
@@ -83,137 +83,6 @@
         Don’t forget to insert the closing tag. You can describe mathematical expressions, equations, and symbols in a structured manner, which can  then  be  rendered  by  web  browsers,  assistive technologies,and  other  software  applications.
         Below  is  an  example  of  how  you  can  use  MathML  in  an  HTML  document  to  display  a  simple mathematical  expression.
     </p>
-
-    <h3>Quadratic Formula</h3>
-    <p class="ex1">The quadratic formula is given by:</p>
-    <p class="ex1">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <mrow>
-                <msup><mi>ax</mi><mn>2</mn></msup>
-                <mo>+</mo>
-                <mn>b</mn>
-                <mo>&InvisibleTimes;</mo>
-                <mi>x</mi>
-                <mo>+</mo>
-                <mn>c</mn>
-                <mo>=</mo>
-                <mn>0</mn>
-            </mrow>
-        </math>
-    </p>
-    <p class="ex1">
-        <a href="https://en.wikipedia.org/wiki/Quadratic_equation">More info on the Quadratic Fromula</a>
-    </p>
-
-    <p id="date_time" style="margin-top:40px"></p>
-
-
-    <button id="colorButton" style="margin-top:40px">Click me!</button>
-
-
-    <h3 style="margin-top:40px">Enter Some Text</h3>
-    <input type="text" id="userInput" placeholder="Type something">
-    <button id="submitButton">Enter</button>
-    <div id="outputText" style="margin-top:10px"></div>
-
-
-    <button id="rng_button" style="margin-top:40px">RNG</button>
-    <P id="rng_output" style="margin-top:20px"></P>
-
-    <script>
-        // Display date and time
-        const d = new Date();
-        document.getElementById("date_time").innerHTML = d;
-
-        // Color change on button click
-        var button = document.getElementById("colorButton");
-        function changeColor() {
-            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-            button.style.backgroundColor = randomColor;
-        }
-        button.addEventListener("click", changeColor);
-
-        // Text input and output
-        const inputField = document.getElementById('userInput');
-        const outputDiv = document.getElementById('outputText');
-        const submitButton = document.getElementById('submitButton');
-
-        submitButton.addEventListener('click', function () {
-            const userText = inputField.value;
-
-            if (userText.trim() !== '') {
-                outputDiv.textContent = userText;
-                outputDiv.style.color = '';
-                inputField.value = '';
-            }
-            else {
-                outputDiv.textContent = "Please type something.";
-                outputDiv.style.color = 'red';
-            }
-        });
-
-        // Random Number Generator
-        const rng_button = document.getElementById('rng_button');
-        const rng_output = document.getElementById('rng_output');
-
-        rng_button.addEventListener('click', function () {
-            let randomNumber = Math.floor(Math.random() * 10) + 1;
-            console.log(randomNumber);
-            rng_output.textContent = randomNumber;
-        });
-    </script>
-
-    <div id="pi_chart_div" style="width:500px; height:300px;"></div>
-    <script>
-        google.charts.load('current', { packages: ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([['Task', 'Hours per Day'], ['Work', 8], ['Sleep', 8], ['Eat', 2], ['Study', 4], ['Exercise', 2]]);
-            var options = { title: 'My Daily Activities' };
-            var chart = new google.visualization.PieChart(document.getElementById('pi_chart_div')); chart.draw(data, options);
-        }
-    </script>
-
-    <div id="scatter_chart_div" style="width:500px; height:300px;"></div>
-    <script>
-        google.charts.load('current', { packages: ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('number', 'Age');
-            data.addColumn('number', 'Salary');
-            data.addRows([[25, 40000], [30, 50000], [35, 60000], [40, 75000], [45, 80000], [50, 90000]]);
-            var options = { title: 'Age vs. Salary', hAxis: { title: 'Age' }, vAxis: { title: 'Salary' } };
-            var chart = new google.visualization.ScatterChart(document.getElementById('scatter_chart_div'));
-            chart.draw(data, options);
-        }
-    </script>
-
-    <div id="bar_chart_div" style="width:500px; height:300px;"></div>
-    <script>
-        google.charts.load('current', { packages: ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'City');
-            data.addColumn('number', 'Population');
-            data.addRows([
-                ['London', 10762782],
-                ['Birmingham', 1111307],
-                ['Edinbuurgh', 2374233]
-            ]);
-
-            var options = {
-                title: 'Cities and their population', hAxis: { title: 'Cities' }, vAxis: { title: 'Population' }, bars: 'vertical', legend: 'none'
-            };
-
-            var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
-            chart.draw(data, options);
-        }
-    </script>
 
 </body>
 </html >
