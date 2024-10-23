@@ -1,0 +1,169 @@
+
+Mathematical formula: 
+
+<h3>Quadratic Formula</h3>
+<p class="ex1">The quadratic formula is given by:</p>
+<p class="ex1">
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <msup><mi>ax</mi><mn>2</mn></msup>
+            <mo>+</mo>
+            <mn>b</mn>
+            <mo>&InvisibleTimes;</mo>
+            <mi>x</mi>
+            <mo>+</mo>
+            <mn>c</mn>
+            <mo>=</mo>
+            <mn>0</mn>
+        </mrow>
+    </math>
+</p>
+
+=========================================================================================
+
+Hyperlinks:
+
+<p class="ex1">
+    <a href="https://en.wikipedia.org/wiki/Quadratic_equation">More info on the Quadratic Fromula</a>
+</p>
+
+=========================================================================================
+
+Date Time:
+
+<p id="date_time" style="margin-top:40px"></p>
+
+<script>
+    const d = new Date();
+    document.getElementById("date_time").innerHTML = d;
+</script>
+
+=========================================================================================
+
+Button with a function:
+
+<button id="Button" style="margin-top:40px">Click me!</button>
+
+<script>
+    var button = document.getElementById("Button");
+    function OnButtonClick() {
+        button.style.backgroundColor = red;
+    }
+
+    button.addEventListener("click", OnButtonClick);
+</script>
+
+=========================================================================================
+
+Text Input Output:
+
+<h3 style="margin-top:40px">Enter Some Text</h3>
+<input type="text" id="userInput" placeholder="Type something">
+<button id="submitButton">Enter</button>
+<div id="outputText" style="margin-top:10px"></div>
+
+<script>
+    // Text input and output
+    const inputField = document.getElementById('userInput');
+    const outputDiv = document.getElementById('outputText');
+    const submitButton = document.getElementById('submitButton');
+
+    submitButton.addEventListener('click', function () {
+        const userText = inputField.value;
+
+        if (userText.trim() !== '') {
+            outputDiv.textContent = userText;
+            outputDiv.style.color = '';
+            inputField.value = '';
+        }
+        else {
+            outputDiv.textContent = "Please type something.";
+            outputDiv.style.color = 'red';
+        }
+    });
+</script>
+
+=========================================================================================
+
+Generating random numbers:
+
+<button id="rng_button" style="margin-top:40px">RNG</button>
+<P id="rng_output" style="margin-top:20px"></P>
+
+<script>
+    // Random Number Generator
+    const rng_button = document.getElementById('rng_button');
+    const rng_output = document.getElementById('rng_output');
+
+    rng_button.addEventListener('click', function () {
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        console.log(randomNumber);
+        rng_output.textContent = randomNumber;
+    });
+</script>
+
+=========================================================================================
+
+Pi Chart:
+
+<div id="pi_chart_div" style="width:500px; height:300px;"></div>
+<script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([['Task', 'Hours per Day'], ['Work', 8], ['Sleep', 8], ['Eat', 2], ['Study', 4], ['Exercise', 2]]);
+        var options = { title: 'My Daily Activities' };
+        var chart = new google.visualization.PieChart(document.getElementById('pi_chart_div'));  
+        chart.draw(data, options);
+    }
+</script>
+
+==========================================================================================
+
+Scatter Graph:
+
+<div id="scatter_chart_div" style="width:500px; height:300px;"></div>
+<script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Age');
+        data.addColumn('number', 'Salary');
+        data.addRows([[25, 40000], [30, 50000], [35, 60000], [40, 75000], [45, 80000], [50, 90000]]);
+        var options = { title: 'Age vs. Salary', hAxis: { title: 'Age' }, vAxis: { title: 'Salary' } };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('scatter_chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+==========================================================================================
+
+Bar Chart: 
+
+<div id="bar_chart_div" style="width:500px; height:300px;"></div>
+<script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'City');
+        data.addColumn('number', 'Population');
+        data.addRows([
+            ['London', 10762782],
+            ['Birmingham', 1111307],
+            ['Edinburgh', 2374233]
+        ]);
+
+        var options = {
+            title: 'Cities and their population', hAxis: { title: 'Cities' }, vAxis: { title: 'Population' }, bars: 'vertical', legend: 'none'
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+        chart.draw(data, options);
+    }
+</script>
