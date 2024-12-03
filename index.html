@@ -145,7 +145,7 @@
                 hAxis: { title: 'Accuracy (%)', minValue: 0, maxValue: 100 },
                 vAxis: { title: 'Condition' },
                 bars: 'vertical', // Vertical bars
-                legend: 'none'
+                legend: { position: 'bottom', maxLines: 3 }
             };
 
             var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
