@@ -119,39 +119,7 @@
         </pre>
     </p>
 
-    <script>
-        window.onload = function () {
-            google.charts.load('current', { packages: ['corechart', 'bar'] });
-            google.charts.setOnLoadCallback(drawChart);
 
-            function drawChart() {
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Condition');
-                data.addColumn('number', 'Physicians');
-                data.addColumn('number', 'AI-CDSS');
-
-                data.addRows([
-                    ['HFrEF', 66.6],
-                    ['HFmrEF', 33],
-                    ['HFpEF', 55],
-                    ['Not HF', 96],
-                    ['All', 76.3]
-                ]);
-
-                var options = {
-                    title: 'Diagnostic accuracy of physicians and AI-CDSS',
-                    chartArea: { width: '50%' },
-                    hAxis: { title: 'Accuracy (%)', minValue: 0, maxValue: 100 },
-                    vAxis: { title: 'Condition' },
-                    bars: 'vertical',
-                    legend: { position: 'top', maxLines: 3 }
-                };
-
-                var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
-                chart.draw(data, options);
-            }
-        };
-    </script>
 
     <p class="ex1">
         <pre>
@@ -183,6 +151,40 @@
         a streamlined treatment process making use of AI’s extreme processing capabilities (Kasula, 2023).
         </pre>
     </p>
+
+    <div id="bar_chart_div" style="width: 500px; height: 300px;"></div>
+    <script>
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Condition');
+            data.addColumn('number', 'Physicians');
+            data.addColumn('number', 'AI-CDSS');
+
+            // Add rows for each condition
+            data.addRows([
+                ['HFrEF', 66.6, 100],
+                ['HFmrEF', 33, 100],
+                ['HFpEF', 55, 100],
+                ['Not HF', 96, 96],
+                ['All', 76.3, 97.9]
+            ]);
+
+            var options = {
+                title: 'Diagnostic accuracy of physicians and AI-CDSS',
+                chartArea: { width: '50%' },
+                hAxis: { title: 'Accuracy (%)', minValue: 0, maxValue: 100 },
+                vAxis: { title: 'Condition' },
+                bars: 'vertical', // Vertical bars
+                legend: { position: 'top', maxLines: 3 }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
 
     <h3 id="Conclusion" style="margin-top: 45px;">Conclusion</h3>
     <p class="ex1">
