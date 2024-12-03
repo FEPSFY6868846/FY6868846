@@ -40,7 +40,7 @@
     <h2>Student URN: 6868846</h2>
 
     <hr>
-    <h2 style="font-family:calibri;"><b>To what extent can we rely on the efficiency and efficacy of AI in medical diagnosis?</b></h2>
+    <h2 style="font-family:calibri;"><b>To what extent can we rely on the efficiency and efficacy of AI in healthcare?</b></h2>
     <hr>
 
     <table class="ex1">
@@ -62,24 +62,69 @@
 
     <h3 id="abstract">Abstract</h3>
     <p class="ex1">
-        The integration of artificial intelligence (AI) in medical diagnosis is having a growing impact in the healthcare industry offering faster, more accurate diagnosis’. This article will investigate to what extent we can rely on the efficiency and efficacy of AI in medical diagnosis, simultaneously addressing associated challenges such as bias’s that can be introduced alongside risks. Through a systematic review of recent studies and academic literature, this paper examines how AI is already being implemented, and the capabilities AI has in reducing diagnostic time, providing more accurate in depth analysis to assist physicians and doctors as well as improving patient outcomes through artificial intelligence’s powerful data analysis ability allowing them to optimize the operations of a healthcare facility benefiting both patients and doctors while remaining reliable, affective and trusted by everyone involved.
+        The integration of artificial intelligence (AI) in medical diagnosis is having a growing impact in the healthcare industry offering faster, more accurate diagnoses (through imaging and decision support systems). This article will investigate to what extent we can rely on the efficiency and efficacy of AI in the healthcare industry, simultaneously addressing associated challenges such as systematic biases that can be introduced, effecting outputs, alongside risks that arise due to a lack of procedure.
+        Through a systematic review of recent studies and academic literature. This paper examines how AI is already being implemented, and the capabilities AI has in reducing diagnostic time, providing more accurate analysis to assist healthcare professionals as well as improving patient outcomes through artificial intelligence’s powerful data analysis ability allowing them to optimize the operations of a healthcare facility benefiting both patients and doctors while ensuring reliability, effectiveness, and trust among healthcare professionals and patients.
     </p>
 
     <hr>
 
     <h3 id="introduction">Introduction</h3>
     <p class="ex1">
-        You can describe mathematical expressions, equations, and symbols in a structured manner, which can  then  be  rendered  by  web  browsers,  assistive technologies,and  other  software  applications.
-        Below  is  an  example  of  how  you  can  use  MathML  in  an  HTML  document  to  display  a  simple mathematical  expression.Presentation  of  MathML primarily  concentrates  on  the  visualisation  of mathematical  equations,  comprising  approximately  30  elements,  all  of  which  commence  with  the letter ‘m’.
-        Some of the elements are listed below.
+        While AI models used to cover 156 common conditions (Finley et al., 2018) can boast an average agreement rate of 90% (Zeltzer et al., 2023) they can still face bias based on the data they were trained on (Eneanya et al., 2019) with one case where different races having different baseline figures. For instance black patients tend to have a higher glomerular filtration rate (how efficiently the kidney can remove waste from blood) than white patients resulting in increased diagnoses (Eneanya et al., 2019), as they both have to meet the same thresholds for treatment for care resulting in delayed treatment (Eneanya et al., 2019). This is an issue that must be confronted before making such technology commonplace ensuring an effective non-biased operation.
+        Although a majority of NHS trusts still do not implement AI imaging, 12 AI imaging networks are being deployed covering 64 NHS trusts receiving a total of £21million in funding (NHS AI Lab, n.d.), it is beginning to play an increasing role in our healthcare system (NHS AI Lab, n.d.).
+        This paper will look into the use artificial intelligence as it develops. Analyzing perspectives from research papers and academic articles discussing both sides of this technology. Firstly, it will asses the accuracy of AI models that are used to support diagnosis (Choi et al., 2020) as well as taking analyzing their efficiency, including the benefits of choosing and incorporating AI models and how that will improve patient care and satisfaction.
     </p>
 
     <h3 id="analysis and discussion" style="margin-top: 45px;">Analysis and Discussion</h3>
+
+    <h4 id="Accuracy" style="margin-top: 45px;">Accuracy</h4>
     <p class="ex1">
-        You can follow the same steps to insert the ‘Introduction’ paragraph and link it with correct ‘id’.
-        You can use this sample introduction for your content.
-        Don’t forget to insert the closing tag. You can describe mathematical expressions, equations, and symbols in a structured manner, which can  then  be  rendered  by  web  browsers,  assistive technologies,and  other  software  applications.
-        Below  is  an  example  of  how  you  can  use  MathML  in  an  HTML  document  to  display  a  simple mathematical  expression.
+        In terms of accuracy AI models can greatly enhance diagnostic accuracy as the average agreement rate (the rate of which the Doctor and AI model gave the same diagnosis) is greater than or equal to 90% (Zeltzer et al., 2023), and after retraining for specific conditions, accuracy increased by 1.4% from 96.6% to 98% as (Zeltzer et al., 2023) found. This shows an AI models ability to improve over time as the model is trained on more conditions and past test data (Zeltzer et al., 2023).
+        As well as this Braun et al. (2020) highlights the large amount of uncertainty and bias in human diagnosis, evaluating that disagreeing human second opinions tend to differ in the weighting of different factors and evaluation methods (Braun et al., 2020) which are human factors that vary between doctors. Similarly, AI can face biases which are introduced when the model is trained, one example being Sample selection bias. This is where the data it is trained on does not represent groups or individuals representatively, which in turn can create spurious correlations (Srinivasan, Chandler, 2021). However this can be mitigated through careful evaluation and selection of data.
+        In figure 2 Choi et al. (2020) compared the diagnostic accuracy of physicians vs an Artificial Intelligence-Clinical Decision Support System (AI-CDSS) in diagnosing heart failure.
+    </p>
+    <p class="ex1">
+        <div id="bar_chart_div" style="width:500px; height:300px;"></div>
+        <script>
+            google.charts.load('current', { packages: ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'City');
+                data.addColumn('number', 'Population');
+                data.addRows([
+                    ['London', 10762782],
+                    ['Birmingham', 1111307],
+                    ['Edinburgh', 2374233]
+                ]);
+
+                var options = {
+                    title: 'Cities and their population', hAxis: { title: 'Cities' }, vAxis: { title: 'Population' }, bars: 'vertical', legend: 'none'
+                };
+
+                var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+    </p>
+    <p class="ex1">
+        Figure 2. Comparison of diagnostic accuracy between physicians and AI-CDSS across four classifications of heart failure, (Choi et al., 2020),
+        Their results show a large gap in correct diagnosis rates with the AI-CDSS on average being 21.6% more accurate than a physician (Choi et al., 2020). This evidence points to the fact that AI models can not only improve the accuracy diagnoses (Choi et al., 2020), but also that it will improve and become more accurate over time as the AI model is trained on a more diverse dataset and that 90% agreement rate will only increase (Zeltzer et al., 2023).
+    </p>
+
+    <h4 id="Efficiency" style="margin-top: 45px;">Efficiency</h4>
+    <p class="ex1">
+        The efficiency of AI models is another key point to assess, improved efficiency will not only mean quicker diagnosis but also improved patient care as an earlier diagnosis means more immediate treatment where an increase in operational efficiency, referring to reduced waiting times, of 30% (Kasula, 2023)  shows the potential to massively improve efficiency in healthcare institutions.  Kasula (2023)  also recorded a 25% reduction in diagnostic errors and a 20% increase in patient satisfaction scores (Kasula, 2023).
+        This shows that implementing AI reduces time wasted through misdiagnoses, simultaneously improving the level of care for patients by offering more individual treatment (Kasula, 2023). There are a few different methods that AI can be used to improve efficiency but the most common ones involve optimizing treatment plans, allowing for more enhanced resource allocation (Zewail, Saber, 2023). It is important however to not over-rely on artificial intelligence as it may include biases that will go unnoticed due to its lack of transparency when providing an output (Daneshjou et al, 2021). Therefore many people believe that AI should be used to aid decision making but ultimately leave responsibility to the doctor (Fenech et al., 2018).
+        They can also use advanced data analytics to detect early warning signs and identify patients who need immediate care, (Zewail, Saber, 2023) alongside a streamlined treatment process making use of AI’s extreme processing capabilities (Kasula, 2023).
+    </p>
+
+    <h4 id="Conclusion" style="margin-top: 45px;">Conclusion</h4>
+    <p class="ex1">
+        This paper investigated the reliability of the efficiency and efficacy of AI models in healthcare. The various papers examined all indicate an improvement in overall efficiency and efficacy in the diagnosis of patients, providing a 20% more accurate evaluation that should be used to help physicians develop diagnoses reducing any bias in the AI model, while providing better insights into patient care through optimal allocation of resources within healthcare facilities with figures of up to 20% increase in patient satisfaction and 30% reduction in waiting times ultimately indicating large gains in both efficacy and efficiency.
+        Despite its potential, AI in the medical field still lacks many of the necessary standards, ethical guidelines and diverse training that should be considered when using technology with the same potential impact. Therefore it requires more robust frameworks relating to a range of things such as how the AI models are trained and what data they use, including how they and who has access to it, to how the outputs are evaluated and used to form a final diagnosis.
+        On balance even without these standards, the positive impact that artificial intelligence can have is undeniable and any benefits in such a crucial industry should be explored cautiously but with optimism.
     </p>
 
 </body>
