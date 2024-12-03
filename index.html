@@ -49,13 +49,16 @@
             <th>Table Of Contents</th>
         </tr>
         <tr>
-            <th><a href="#abstract"></a>Abstract</th>
+            <th><a href="#abstract">Abstract</a></th>
         </tr>
         <tr>
-            <th><a href="#introduction"></a>Introduction</th>
+            <th><a href="#introduction">Introduction</a></th>
         </tr>
         <tr>
-            <th><a href="#analysis and discussion"></a>Analysis and Discussion</th>
+            <th><a href="#analysis and discussion">Analysis and Discussion</a></th>
+        </tr>
+        <tr>
+            <th><a href="#Conclusion">Conclusion</a></th>
         </tr>
     </table>
 
@@ -130,7 +133,6 @@
             data.addColumn('number', 'Physicians');
             data.addColumn('number', 'AI-CDSS');
 
-            // Add rows for each condition
             data.addRows([
                 ['HFrEF', 66.6, 100],
                 ['HFmrEF', 33, 100],
@@ -144,7 +146,7 @@
                 chartArea: { width: '50%' },
                 hAxis: { title: 'Accuracy (%)', minValue: 0, maxValue: 100 },
                 vAxis: { title: 'Condition' },
-                bars: 'vertical', // Vertical bars
+                bars: 'vertical',
                 legend: { position: 'bottom', maxLines: 3 }
             };
 
