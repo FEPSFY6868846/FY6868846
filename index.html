@@ -1,40 +1,84 @@
 <!DOCTYPE html>
+<div id="last-updated">Loading last update time...</div>
+<!-- Verify Button -->
+<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+    Verify Last Modified Time
+</button>
+<script>
+    async function getLastUpdatedTime() {
+        const username = 'FEPSFY6868846';
+        const repo = 'FY6868846';
+
+        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+            }
+            const commits = await response.json();
+            if (commits && commits.length > 0) {
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+
+                // Displaying the time on load
+                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+            } else {
+                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+            }
+        } catch (error) {
+            console.error('Error fetching the last updated time:', error);
+            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+        }
+    }
+    // Function to verify the last update time by re-fetching it from the API
+    async function verifyLastUpdatedTime() {
+        document.getElementById('last-updated').innerText = 'Verifying...';
+        await getLastUpdatedTime();
+        alert("Last modified time has been successfully verified from GitHub API.");
+    }
+    // Initial load to display the time on page load
+    window.onload = getLastUpdatedTime;
+</script>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script type ="text/javascript" src=https://www.gstatic.com/charts/loader.js></script>
+    <script type="text/javascript" src=https://www.gstatic.com/charts/loader.js></script>
 
-        <style>
-            table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 30%;
-            }
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 30%;
+        }
 
-            td, th {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-            }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
-            tr:nth-child(1) {
-                background-color: #dddddd;
-            }
+        tr:nth-child(1) {
+            background-color: #dddddd;
+        }
 
-            p.ex1 {
-                margin-left: 250px;
-                white-space: pre-wrap;
-                font-family: Calibri, sans-serif;
-            }
+        p.ex1 {
+            margin-left: 250px;
+            white-space: pre-wrap;
+            font-family: Calibri, sans-serif;
+        }
 
-            .mySlides {
-                display: none;
-            }
-        </style>
+        .mySlides {
+            display: none;
+        }
+    </style>
 
 </head>
-  
+
 <body style="background-color:#FFFFFF;margin-left:50px;margin-right:50px;margin-bottom:50px">
 
     <img src="WebBanner.png" alt="Banner" width="100%">
@@ -59,7 +103,7 @@
             <th><a href="#analysis and discussion">Analysis and Discussion</a></th>
         </tr>
         <tr>
-            <th><a href="#Conclusion">Conclusion</a></th>
+            <th><a href="#conclusion">Conclusion</a></th>
         </tr>
         <tr>
             <th><a href="#Reference_List">Reference List</a></th>
@@ -167,7 +211,7 @@
         </pre>
     </p>
 
-    <h4 id="Efficiency" style="margin-top: 45px;">Efficiency</h4>
+    <h4 id="efficiency" style="margin-top: 45px;">Efficiency</h4>
     <p class="ex1">
         <pre>
         The efficiency of AI models is another key point to assess, improved efficiency will not only mean quicker diagnosis but also improved patient 
@@ -187,7 +231,7 @@
         </pre>
     </p>
 
-    <h3 id="Conclusion" style="margin-top: 45px;">Conclusion</h3>
+    <h3 id="conclusion" style="margin-top: 45px;">Conclusion</h3>
     <p class="ex1">
         <pre>
         This paper investigated the reliability of the efficiency and efficacy of AI models in healthcare. The various papers examined all indicate an 
@@ -205,6 +249,35 @@
         industry should be explored cautiously but with optimism.
         </pre>
     </p>
+
+    <p id="totalWordCount"></p>
+    <hr>
+    <script>
+        // Function to calculate and display word count for a specified section
+        function displayWordCount(sectionId, outputId) {
+            // Get the text content from the specified section
+            const text = document.getElementById(sectionId).textContent;
+            // Split text into words based on spaces and filter out any empty strings
+            const wordArray = text.trim().split(/\s+/);
+            // Count the words
+            const wordCount = wordArray.length;
+            // Return the word count for summing purposes
+            return wordCount;
+        }
+        // Function to calculate and display total word count from selected sections
+        function displayTotalWordCount() {
+            // Calculate word count for each section and accumulate the total
+            const IntroductionCount = displayWordCount("introduction");
+            const AnalysisCount = displayWordCount("analysis and discussion");
+            const ConclusionCount = displayWordCount("conclusion");
+            // Calculate the sum of all selected sections
+            const totalWordCount = IntroductionCount + AnalysisCount + ConclusionCount;
+            // Display the total word count
+            document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+        }
+        // Run the function for specific sections and display total count when the page loads
+        window.onload = displayTotalWordCount;
+    </script>
 
     <h3 id="Reference_List" style="margin-top: 45px;">Reference List</h3>
     <p class="ex1">
@@ -256,4 +329,4 @@
         </pre>
     </p>
 </body>
-</html >
+</html>
