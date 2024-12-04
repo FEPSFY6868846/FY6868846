@@ -130,7 +130,7 @@
     <hr>
 
     <h3 id="introduction">Introduction</h3>
-    <p class="ex1">
+    <p id="introduction_text" class="ex1">
         <pre>
         While AI models used to cover 156 common conditions <a href="#Reference_List">(Finley et al., 2018)</a> can boast an average agreement rate of 90% <a href="#Reference_List">(Zeltzer et al., 2023)</a>
         they can still face bias based on the data they were trained on <a href="#Reference_List">(Eneanya et al., 2019)</a> with one case where different races having different
@@ -151,8 +151,8 @@
 
     <h3 id="analysis and discussion" style="margin-top: 45px;">Analysis and Discussion</h3>
 
-    <h4 id="Accuracy" style="margin-top: 45px;">Accuracy</h4>
-    <p class="ex1">
+    <h4 id="accuracy" style="margin-top: 45px;">Accuracy</h4>
+    <p id="accuracy_text" class="ex1">
         <pre>
         In terms of accuracy AI models can greatly enhance diagnostic accuracy as the average agreement rate (the rate of which the Doctor and AI model
         gave the same diagnosis) is greater than or equal to 90% <a href="#Reference_List">(Zeltzer et al., 2023)</a>, and after retraining for specific conditions, accuracy increased
@@ -203,7 +203,7 @@
         }
     </script>
 
-    <p class="ex1">
+    <p id="accuracy_text_2" class="ex1">
         <pre>        
         Their results, from figure 1, show a large gap in correct diagnosis rates with the AI-CDSS on average being 21.6% more accurate than a physician <a href="#Reference_List">(Choi et al., 2020)</a>.
         This evidence points to the fact that AI models can not only improve the accuracy diagnoses <a href="#Reference_List">(Choi et al., 2020)</a>, but also that it will improve
@@ -212,7 +212,7 @@
     </p>
 
     <h4 id="efficiency" style="margin-top: 45px;">Efficiency</h4>
-    <p class="ex1">
+    <p id="efficiency_text" class="ex1">
         <pre>
         The efficiency of AI models is another key point to assess, improved efficiency will not only mean quicker diagnosis but also improved patient 
         care as an earlier diagnosis means more immediate treatment, where an increase in operational efficiency referring to reduced waiting times of 
@@ -232,7 +232,7 @@
     </p>
 
     <h3 id="conclusion" style="margin-top: 45px;">Conclusion</h3>
-    <p class="ex1">
+    <p id="conclusion_text" class="ex1">
         <pre>
         This paper investigated the reliability of the efficiency and efficacy of AI models in healthcare. The various papers examined all indicate an 
         improvement in overall efficiency and efficacy in the diagnosis of patients, providing a roughly 20% more accurate evaluation that should be used to 
@@ -268,10 +268,18 @@
         function displayTotalWordCount() {
             // Calculate word count for each section and accumulate the total
             const IntroductionCount = displayWordCount("introduction");
+            const IntroductionTextCount = displayWordCount("introduction_text");
             const AnalysisCount = displayWordCount("analysis and discussion");
+            const AccuracyCount = displayWordCount("accuracy");
+            const AccuracyTextCount = displayWordCount("accuracy_text");
+            const AccuracyChartCount = displayWordCount("bar_chart_div");
+            const AccuracyTextCount2 = displayWordCount("accuracy_text_2")
+            const EfficiencyCount = displayWordCount("efficiency");
+            const EfficiencyTextCount = displayWordCount("efficiency_text");
             const ConclusionCount = displayWordCount("conclusion");
+            const ConclusionTextCount = displayWordCount("conclusion_text");
             // Calculate the sum of all selected sections
-            const totalWordCount = IntroductionCount + AnalysisCount + ConclusionCount;
+            const totalWordCount = IntroductionCount + IntroductionTextCount + AnalysisCount + AccuracyCount + AccuracyTextCount + AccuracyChartCount + AccuracyTextCount2 + EfficiencyCount + EfficiencyTextCount + ConclusionCount + ConclusionTextCount;
             // Display the total word count
             document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
         }
